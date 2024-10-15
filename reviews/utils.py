@@ -32,7 +32,7 @@ def preprocess_text(text):
     return text
 
 def load_keras_model():
-    model_path = os.path.join(settings.BASE_DIR, 'reviews', 'model', 'Fourth_model.keras')
+    model_path = os.path.join(settings.BASE_DIR, 'reviews', 'model', 'Fourth_model.h5')
     model = load_model(model_path)
     return model
 
@@ -45,7 +45,7 @@ def load_tokenizer():
 model = load_keras_model()
 tokenizer = load_tokenizer()
 
-max_review_len = 200
+max_review_len = 350
 
 def tokenize_text(text):
     sequences = [tokenizer.encode(t).ids for t in text]
