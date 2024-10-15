@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отзывы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Устанавливает шрифт для всей страницы */
+            background-color: #f4f4f4; /* Цвет фона страницы */
+            margin: 0;
+            padding: 20px;
+        }
+        div {
+            background-color: white; /* Фоновый цвет для div */
+            width: 50%; /* Ширина div */
+            margin: auto; /* Центрирование div на странице */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Тень вокруг div */
+        }
+        h2 {
+            color: #333; /* Цвет заголовка */
+        }
+        form {
+            display: flex;
+            flex-direction: column; /* Элементы формы выстраиваются в колонку */
+        }
+        input, button {
+            padding: 10px; /* Поле ввода и кнопка с отступом */
+            margin-top: 5px; /* Отступ сверху для каждого элемента формы */
+        }
+        button {
+            background-color: #007BFF; /* Цвет фона кнопки */
+            color: white; /* Цвет текста кнопки */
+            border: none; /* Убирает границу у кнопки */
+            cursor: pointer; /* Форма курсора при наведении на кнопку */
+        }
+        button:hover {
+            background-color: #0056b3; /* Цвет кнопки при наведении */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Здравствуйте! Введите текст отзыва (на английском) для анализа</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
